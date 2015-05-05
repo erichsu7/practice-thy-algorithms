@@ -17,7 +17,20 @@ Algorithms.digitalRoot = function (number) {
 // Assume lowercase and no punctuation.
 // Preserve spaces.
 Algorithms.caesarCipher = function (string, shift) {
+  var result = "";
+  var charCode;
+  var firstCharCode = "a".charCodeAt(0);
+  for (var i = 0; i < string.length; i++) {
+    charCode = string.charCodeAt(i);
+    if (charCode === 32) {
+      result += " ";
+    } else {
+      charCode = ((charCode - firstCharCode + shift) % 26 ) + firstCharCode;
+      result += String.fromCharCode(charCode);
+    }
+  }
 
+  return result;
 };
 
 // Write a function that takes two strings and returns the longest common substring.
