@@ -9,11 +9,11 @@ describe("digitalRoot", function() {
 });
 
 describe("caesarCipher", function() {
-  it("'hello' should return 'lipps'", function() {
+  it("'hello' should return 'lipps' with shift of 4", function() {
     expect(Algorithms.caesarCipher('hello', 4)).toBe('lipps');
   });
 
-  it("'abc' should return 'abc'", function() {
+  it("'abc' should return 'abc' with shift of 0", function() {
     expect(Algorithms.caesarCipher('abc', 0)).toBe('abc');
   });
 });
@@ -24,7 +24,7 @@ describe("commonSubstrings", function() {
   });
 
   it("'ABABC' and 'BABCA' should return 'ABC'", function() {
-    expect(Algorithms.commonSubstrings('ABABC', 'BABCA')).toBe('ABC');
+    expect(Algorithms.commonSubstrings('ABABC', 'BABCA')).toBe('BABC');
   });
 });
 

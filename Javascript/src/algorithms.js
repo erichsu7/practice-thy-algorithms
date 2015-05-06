@@ -35,7 +35,20 @@ Algorithms.caesarCipher = function (string, shift) {
 
 // Write a function that takes two strings and returns the longest common substring.
 Algorithms.commonSubstrings = function (stringOne, stringTwo) {
+  var shortString = stringOne <= stringTwo ? stringOne : stringTwo;
+  var longString = stringOne > stringTwo ? stringOne : stringTwo;
+  var len = shortString.length;
 
+  while (len > 0) {
+    for (var i = 0; i + len <= shortString.length; i++) {
+        var substring = shortString.substring(i, i + len);
+        if (stringTwo.indexOf(substring) > -1) {
+          return substring;
+        }
+    }
+    len--;
+  }
+  return false;
 };
 
 // Write a function that takes an array of integers and returns their sum.
