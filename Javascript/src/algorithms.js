@@ -66,6 +66,12 @@ Algorithms.fibs = function (number) {
   var fibsArray = [0, 1];
   if (number <= 2) { return fibsArray.slice(0, number); }
 
+  //recursive solution
+  // var prevFibs = Algorithms.fibs(number - 1);
+  // var nextFib = prevFibs[prevFibs.length - 1] + prevFibs[prevFibs.length - 2];
+  // return prevFibs.concat([nextFib]);
+
+  //iterative solution
   while (fibsArray.length < number) {
     fibsArray.push(fibsArray[fibsArray.length - 1] + fibsArray[fibsArray.length - 2] );
   }
