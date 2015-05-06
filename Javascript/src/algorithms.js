@@ -159,7 +159,23 @@ Algorithms.sillyYears = function (number) {
 // Time complexity: O(n).
 // Return an array.
 Algorithms.pairSum = function (array, k) {
+  var result = [];
+  var resultHash = {};
+  var numsHash = {};
 
+  for (var i = 0; i < array.length; i++) {
+    numsHash[array[i]] = true;
+    var diff = k - array[i];
+    if (numsHash[diff]) {
+      var pair = [array[i], diff].sort();
+      if (!resultHash[pair]) {
+        result.push(pair);
+        resultHash[pair] = true;
+      }
+    }
+  }
+
+  return result;
 };
 
 // Given a matrix of integers and coordinates of a rectangular region within the matrix.
