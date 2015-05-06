@@ -123,7 +123,16 @@ Algorithms.uniqSubs = function (string) {
 // You can solve this trivially in O(n**2) time by considering all subarrays.
 // Try to solve it in O(n) time with O(1) memory.
 Algorithms.lcs = function (array) {
+  var maxSum = 0;
+  var currentSum = 0;
 
+  for (var i = 0; i < array.length; i++) {
+    currentSum += array[i];
+    if (currentSum > maxSum) { maxSum = currentSum; }
+    if (currentSum < 0) { currentSum = 0; }
+  }
+
+  return maxSum;
 };
 
 // Write a function that takes a year (four digit integer) and returns an array with the 10 closest subsequent years that meet the following condition:
