@@ -42,7 +42,7 @@ Algorithms.commonSubstrings = function (stringOne, stringTwo) {
   while (len > 0) {
     for (var i = 0; i + len <= shortString.length; i++) {
         var substring = shortString.substring(i, i + len);
-        if (stringTwo.indexOf(substring) > -1) {
+        if (longString.indexOf(substring) > -1) {
           return substring;
         }
     }
@@ -54,7 +54,11 @@ Algorithms.commonSubstrings = function (stringOne, stringTwo) {
 // Write a function that takes an array of integers and returns their sum.
 // Use recursion.
 Algorithms.sumRec = function (numbers) {
+  if (numbers.length === 1) {
+    return numbers[0];
+  }
 
+  return numbers[0] + Algorithms.sumRec(numbers.slice(1));
 };
 
 // Write a function which returns the first n elements from the fibonnacci sequence, given n.

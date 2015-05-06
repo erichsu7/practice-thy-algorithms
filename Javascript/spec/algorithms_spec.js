@@ -23,8 +23,12 @@ describe("commonSubstrings", function() {
     expect(Algorithms.commonSubstrings('Hello', 'Hello World')).toBe('Hello');
   });
 
-  it("'ABABC' and 'BABCA' should return 'ABC'", function() {
+  it("'ABABC' and 'BABCA' should return 'BABC'", function() {
     expect(Algorithms.commonSubstrings('ABABC', 'BABCA')).toBe('BABC');
+  });
+
+  it("'wizard' and 'mouse' should return false", function() {
+    expect(Algorithms.commonSubstrings('wizard', 'mouse')).toBe(false);
   });
 });
 
