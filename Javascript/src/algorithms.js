@@ -76,7 +76,7 @@ Algorithms.fibs = function (number) {
     fibsArray.push(fibsArray[fibsArray.length - 1] + fibsArray[fibsArray.length - 2] );
   }
 
-  return fibsArray;
+  return fibsArray
 };
 
 // Write a function that takes a string and returns true if it's a palindrome, false if it's not.
@@ -182,7 +182,14 @@ Algorithms.pairSum = function (array, k) {
 // Find the sum of numbers falling inside the rectangle.
 // Time complexity: O(number of rows * number of columns).
 Algorithms.matrixRegionSum = function (matrix, topLeftCoords, bottomRightCoords) {
+  var sum = 0;
+  for (var i = topLeftCoords[0]; i <= bottomRightCoords[0]; i++) {
+    for (var j = topLeftCoords[1]; j <= bottomRightCoords[1]; j++) {
+      sum += matrix[i][j];
+    }
+  }
 
+  return sum;
 };
 
 })();

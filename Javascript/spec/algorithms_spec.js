@@ -138,6 +138,13 @@ describe("matrixRegionSum", function() {
   });
 
   it("should return the sum of the elements within the coordinates", function() {
+    var matrix = [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
+    var topLeftCoords = [0, 0]
+    var bottomRightCoords = [1, 2]
+    expect(Algorithms.matrixRegionSum(matrix, topLeftCoords, bottomRightCoords)).toBe(15);
+  });
+
+  it("should return the sum of the elements within the coordinates", function() {
     var matrix = [[2, 3, 4], [3, 4, 5], [4, 5, 6]]
     var topLeftCoords = [0, 0]
     var bottomRightCoords = [2, 2]
