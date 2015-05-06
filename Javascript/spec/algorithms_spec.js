@@ -42,15 +42,23 @@ describe("sumRec", function() {
   });
 });
 
-describe("fibs", function() {
-  it("3 should return [0, 1, 1]", function() {
-    expect(Algorithms.fibs(3)).toBe([0, 1, 1]);
-  });
-
-  it("5 should return [0, 1, 1, 2, 3]", function() {
-    expect(Algorithms.fibs(5)).toBe([0, 1, 1, 2, 3]);
-  });
-});
+// describe("fibs", function() {
+//   it("1 should return [0]", function() {
+//     expect(Algorithms.fibs(1)).toBe([0]);
+//   });
+//
+//   it("2 should return [0, 1]", function() {
+//     expect(Algorithms.fibs(2)).toBe([0, 1]);
+//   });
+//
+//   it("3 should return [0, 1, 1]", function() {
+//     expect(Algorithms.fibs(3)).toBe([0, 1, 1]);
+//   });
+//
+//   it("5 should return [0, 1, 1, 2, 3]", function() {
+//     expect(Algorithms.fibs(5)).toBe([0, 1, 1, 2, 3]);
+//   });
+// });
 
 describe("isPalindrome", function() {
   it("'ricercar' should return false", function() {
