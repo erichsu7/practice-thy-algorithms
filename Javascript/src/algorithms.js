@@ -138,7 +138,20 @@ Algorithms.lcs = function (array) {
 // Write a function that takes a year (four digit integer) and returns an array with the 10 closest subsequent years that meet the following condition:
 // the first two digits summed with the last two digits are equal to the middle two digits.
 Algorithms.sillyYears = function (number) {
+  var result = [];
 
+  for (var year = number; result.length < 10 && year < 10000; year++) {
+    var a = Math.floor(year / 1000);
+    var b = Math.floor((year - (1000 * a)) / 100);
+    var c = Math.floor((year - (1000 * a) - (100 * b)) / 10);
+    var d = year % 10;
+
+    if ((10 * a) - (9 * b) + (9 * c) + d === 0) {
+      result.push(year);
+    }
+  }
+
+  return result;
 };
 
 // Given an array of integers, return all pairs that sum up to a specified value k.
