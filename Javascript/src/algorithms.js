@@ -82,14 +82,26 @@ Algorithms.fibs = function (number) {
 // Write a function that takes a string and returns true if it's a palindrome, false if it's not.
 // Your solution should take less time and memory than rebuilding the string backward and comparing the two.
 Algorithms.isPalindrome = function (string) {
+  for (var i = 0; i < (string.length / 2); i++) {
+    if (string[i] !== string[string.length - 1 - i]) { return false; }
+  }
 
+  return true;
 };
 
 // Implement the Folding Cipher.
 // It folds the alphabet in half and uses the adjacent letter.
 // a <=> z, b <=> y, c <=> x, m <=> n.
 Algorithms.foldingCipher = function (string) {
+  var firstCharCode = "a".charCodeAt(0);
+  var lastCharCode = "z".charCodeAt(0);
+  var result = "";
+  for (var i = 0; i < string.length; i++) {
+    var charCode = string.charAt(i).charCodeAt(0);
+    result += String.fromCharCode(firstCharCode + lastCharCode - charCode);
+  }
 
+  return result;
 };
 
 // Write a method that finds all the unique substrings for a word.
