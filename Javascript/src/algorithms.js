@@ -192,4 +192,58 @@ Algorithms.matrixRegionSum = function (matrix, topLeftCoords, bottomRightCoords)
   return sum;
 };
 
+// Implement a sorting function using the merge sort algorithm.
+Algorithms.mergeSort = function (array) {
+  if (array.length <= 1) { return array }
+  var result = [];
+
+  var midpoint = array.length / 2;
+  var leftArray = Algorithms.mergeSort(array.slice(0, midpoint));
+  var rightArray = Algorithms.mergeSort(array.slice(midpoint));
+
+  while (leftArray.length > 0 && rightArray.length > 0) {
+    if (leftArray[0] < rightArray[0]) {
+      result.push(leftArray.shift());
+    } else {
+      result.push(rightArray.shift());
+    }
+  }
+
+  return result.concat(leftArray).concat(rightArray);
+}
+
+// Implement a recursive binary search function.
+// Algorithms.binarySearch = function (array, target) {
+//   if (array.length < 1) { return null; }
+//
+//   var midpoint = Math.floor(array.length / 2);
+//   if (target < array[midpoint]) {
+//     return Algorithms.binarySearch(array.slice(0, midpoint));
+//   } else if (target > array[midpoint]) {
+//     var nextMidpoint = Algorithms.binarySearch(array.slice(midpoint + 1));
+//     return nextMidpoint ? midpoint + nextMidpoint + 1 : null;
+//   } else {
+//     return midpoint;
+//   }
+// }
+
+// Implement an iterative binary search function.
+Algorithms.binarySearch = function (array, target) {
+  var low = 0;
+  var high = array.length - 1;
+
+  while (low <= high) {
+    var midpoint = Math.floor((low + high) / 2);
+    if (target < array[midpoint]) {
+      high = midpoint - 1;
+    } else if (target > array[midpoint]) {
+      low = midpoint + 1;
+    } else {
+      return midpoint;
+    }
+  }
+
+  return null;
+}
+
 })();

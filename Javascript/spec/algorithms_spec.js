@@ -151,3 +151,36 @@ describe("matrixRegionSum", function() {
     expect(Algorithms.matrixRegionSum(matrix, topLeftCoords, bottomRightCoords)).toBe(36);
   });
 });
+
+// describe("mergeSort", function () {
+//   it("should sort an array", function () {
+//     var sortedArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//     var unsortedArray = [4, 9, 5, 1, 6, 3, 7, 2, 8];
+//     expect(Algorithms.mergeSort(unsortedArray)).toBe(sortedArray);
+//   });
+// });
+
+describe("binarySearch", function () {
+  it("should return the correct index", function () {
+    var array = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+    expect(Algorithms.binarySearch(array, 30)).toBe(2);
+  });
+
+  it("should return the correct index", function () {
+    var array = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+    expect(Algorithms.binarySearch(array, 80)).toBe(7);
+  });
+
+  it("should return null if no match", function () {
+    var array = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+    expect(Algorithms.binarySearch(array, 150)).toBe(null);
+  });
+});
+
+describe("productify", function () {
+  it("should map the product of every other number", function () {
+    var array = [1, 2, 3, 4, 5];
+    var result = [120, 60, 40, 30, 24];
+    expect(Algorithms.productify(array)).toBe(result);
+  });
+});
