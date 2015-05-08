@@ -246,4 +246,25 @@ Algorithms.binarySearch = function (array, target) {
   return null;
 }
 
+// Given a list of numbers in an array, replace all the numbers
+// with the product of all other numbers. Do this in O(n) time without
+// using division.
+Algorithms.productify = function (array) {
+  var result = [];
+  var product = 1;
+  for (var i = 0; i < array.length; i++) {
+    result[i] = product;
+    product *= array[i];
+  }
+
+  product = 1;
+  for (var j = array.length - 1; j >= 0; j--) {
+    console.log(j);
+    result[j] *= product;
+    product *= array[j];
+  }
+
+  return result;
+}
+
 })();
