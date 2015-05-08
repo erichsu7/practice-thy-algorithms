@@ -267,4 +267,15 @@ Algorithms.productify = function (array) {
   return result;
 }
 
+// Write a function that takes an array and returns all of its subsets.
+Algorithms.subsets = function (array) {
+  if (array.length === 0) { return [[]] };
+
+  var prevSubsets = Algorithms.subsets(array.slice(0, -1));
+  var newSubsets = prevSubsets.map(function (subset) {
+    return subset.concat([array[array.length - 1]]);
+  });
+  return prevSubsets.concat(newSubsets);
+}
+
 })();

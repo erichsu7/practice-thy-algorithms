@@ -42,23 +42,23 @@ describe("sumRec", function() {
   });
 });
 
-// describe("fibs", function() {
-//   it("1 should return [0]", function() {
-//     expect(Algorithms.fibs(1)).toBe([0]);
-//   });
-//
-//   it("2 should return [0, 1]", function() {
-//     expect(Algorithms.fibs(2)).toBe([0, 1]);
-//   });
-//
-//   it("3 should return [0, 1, 1]", function() {
-//     expect(Algorithms.fibs(3)).toBe([0, 1, 1]);
-//   });
-//
-//   it("5 should return [0, 1, 1, 2, 3]", function() {
-//     expect(Algorithms.fibs(5)).toBe([0, 1, 1, 2, 3]);
-//   });
-// });
+describe("fibs", function() {
+  it("1 should return [0]", function() {
+    expect(Algorithms.fibs(1)).toEqual([0]);
+  });
+
+  it("2 should return [0, 1]", function() {
+    expect(Algorithms.fibs(2)).toEqual([0, 1]);
+  });
+
+  it("3 should return [0, 1, 1]", function() {
+    expect(Algorithms.fibs(3)).toEqual([0, 1, 1]);
+  });
+
+  it("5 should return [0, 1, 1, 2, 3]", function() {
+    expect(Algorithms.fibs(5)).toEqual([0, 1, 1, 2, 3]);
+  });
+});
 
 describe("isPalindrome", function() {
   it("'ricercar' should return false", function() {
@@ -152,13 +152,13 @@ describe("matrixRegionSum", function() {
   });
 });
 
-// describe("mergeSort", function () {
-//   it("should sort an array", function () {
-//     var sortedArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-//     var unsortedArray = [4, 9, 5, 1, 6, 3, 7, 2, 8];
-//     expect(Algorithms.mergeSort(unsortedArray)).toBe(sortedArray);
-//   });
-// });
+describe("mergeSort", function () {
+  it("should sort an array", function () {
+    var sortedArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    var unsortedArray = [4, 9, 5, 1, 6, 3, 7, 2, 8];
+    expect(Algorithms.mergeSort(unsortedArray)).toEqual(sortedArray);
+  });
+});
 
 describe("binarySearch", function () {
   it("should return the correct index", function () {
@@ -181,6 +181,14 @@ describe("productify", function () {
   it("should map the product of every other number", function () {
     var array = [1, 2, 3, 4, 5];
     var result = [120, 60, 40, 30, 24];
-    expect(Algorithms.productify(array)).toBe(result);
+    expect(Algorithms.productify(array)).toEqual(result);
   });
 });
+
+describe("subsets", function () {
+  it("should return all the subsets of an array", function () {
+    var array = [3, 2, 1]
+    var result = [[], [3], [2], [3, 2], [1], [3, 1], [2, 1], [3, 2, 1]];
+    expect(Algorithms.subsets(array)).toEqual(result);
+  })
+})
